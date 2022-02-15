@@ -4,6 +4,7 @@ import java.util.Random;
 
 class Employee {
 	static final int IS_FULL_TIME = 1;
+	static final int IS_PART_TIME = 2;
 	static final int EMP_WAGE_PER_DAY = 20;
 
 	public static int empCheck() {
@@ -16,6 +17,8 @@ class Employee {
 		int empWrkHrs = 0;
 		if (empCheck == IS_FULL_TIME) {
 			empWrkHrs = 8;
+		} else if (empCheck == IS_PART_TIME) {
+			empWrkHrs = 4;
 		} else {
 			empWrkHrs = 0;
 		}
@@ -29,7 +32,6 @@ public class EmployeeWageUsingOOPS {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Employee Wage Computation Program");
-		// Employee.empCheck();
 		int empCheck = Employee.empCheck();
 		Employee.empSalary(empCheck);
 	}
