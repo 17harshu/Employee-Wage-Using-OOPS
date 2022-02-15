@@ -14,13 +14,11 @@ class Employee {
 	}
 
 	public static void empSalary(int empCheck) {
-		int empWrkHrs = 0;
-		if (empCheck == IS_FULL_TIME) {
-			empWrkHrs = 8;
-		} else if (empCheck == IS_PART_TIME) {
-			empWrkHrs = 4;
-		} else {
-			empWrkHrs = 0;
+		int empWrkHrs;
+		switch (empCheck) {
+		case IS_FULL_TIME -> empWrkHrs = 8;
+		case IS_PART_TIME -> empWrkHrs = 4;
+		default -> empWrkHrs = 0;
 		}
 		int empWage = empWrkHrs * EMP_WAGE_PER_DAY;
 		System.out.println("empWage = " + empWage);
